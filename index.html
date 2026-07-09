@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davka — Narandavaa Nyamdorj</title>
+<meta name="description" content="Davka. Die persönliche Seite von Narandavaa Nyamdorj aus Zürich — ein einfaches Journal über das, was gerade in meinem Leben passiert.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231b3df5'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial,sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">Davka<span class="logo-dot">.</span></a>
+    <nav class="nav">
+      <a href="#jetzt">Jetzt</a>
+      <a href="#journal">Journal</a>
+      <a href="#ueber">Über</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <p class="kicker">Narandavaa Nyamdorj · Zürich, Schweiz</p>
+    <h1 class="wordmark">Davka<span class="accent">.</span></h1>
+    <p class="motto">Be smart. Be nice. Be committed.</p>
+    <p class="lead">
+      Hoi. Hier schreibe ich einfach auf, was gerade in meinem Leben läuft.
+      Kein Lebenslauf — ein Notizbuch, das offen herumliegt.
+    </p>
+    <p class="hero-links">
+      <a href="#journal">Zum Journal ↓</a>
+      <a href="https://www.linkedin.com/in/narann1/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </p>
+  </section>
+
+  <section id="jetzt" class="wrap block">
+    <div class="block-head">
+      <span class="num">01</span>
+      <h2>Jetzt gerade</h2>
+    </div>
+    <ul class="now-list">
+      <li><b>Studiere</b> Industrial Engineering an der HSLU Luzern. Abschluss 2027.</li>
+      <li><b>Unterwegs</b> als Business Engineer Ambassador quer durch die Schweiz.</li>
+      <li><b>Diesen Sommer</b> am NextGen-Camp vom Swiss Economic Forum.</li>
+    </ul>
+  </section>
+
+  <section id="journal" class="wrap block">
+    <div class="block-head">
+      <span class="num">02</span>
+      <h2>Journal</h2>
+    </div>
+    <div id="journal-feed" class="journal-feed"><!-- js/news-data.js --></div>
+  </section>
+
+  <section id="ueber" class="wrap block">
+    <div class="block-head">
+      <span class="num">03</span>
+      <h2>Über</h2>
+    </div>
+    <p class="about-text">
+      Ich heisse Narandavaa Nyamdorj, alle nennen mich Davka. Zürich, Schweiz.
+      Ich mag die Stelle, an der Technik auf Menschen trifft — und arbeite gern deliberat,
+      genau, davka.
+    </p>
+    <dl class="facts">
+      <div><dt>Ort</dt><dd>Wettswil, Zürich</dd></div>
+      <div><dt>Studium</dt><dd>Industrial Engineering, HSLU</dd></div>
+      <div><dt>Sprachen</dt><dd>Deutsch · Englisch (C1)</dd></div>
+      <div><dt>Mehr</dt><dd><a href="https://www.linkedin.com/in/narann1/" target="_blank" rel="noopener">LinkedIn ↗</a></dd></div>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="logo">Davka<span class="logo-dot">.</span></span>
+    <span class="muted">© <span id="year"></span> Narandavaa Nyamdorj · nyamdorj.ch</span>
+  </div>
+</footer>
+
+<script src="js/news-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
