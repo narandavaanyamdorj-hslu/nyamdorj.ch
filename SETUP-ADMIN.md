@@ -12,12 +12,23 @@ Ergebnis danach:
 
 ---
 
-## Schritt 0 — GitHub Pages aktivieren (falls noch nicht)
+## Schritt 0 — GitHub Pages + Domain nyamdorj.ch
 
-1. Repo öffnen → **Settings → Pages**
-2. *Source*: **Deploy from a branch**, Branch **main**, Ordner **/ (root)** → **Save**
-3. Nach ein paar Minuten ist die Seite live unter:
-   `https://narandavaanyamdorj-hslu.github.io/nyamdorj.ch/`
+Du hast bereits eine **CNAME-Datei mit `nyamdorj.ch`** angelegt — die Domain ist also
+gewünscht. Damit sie funktioniert:
+
+1. Repo → **Settings → Pages** → *Source*: **Deploy from a branch**, Branch **main**,
+   Ordner **/ (root)**. Unter *Custom domain* sollte `nyamdorj.ch` stehen.
+2. **DNS bei deinem Domain-Anbieter** setzen, damit nyamdorj.ch auf GitHub Pages zeigt:
+   - **A-Records** für `nyamdorj.ch` (Apex) auf:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - **AAAA-Records** (optional, IPv6):
+     `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - Optional `www` als **CNAME** auf `narandavaanyamdorj-hslu.github.io`
+3. In den Pages-Einstellungen **„Enforce HTTPS"** aktivieren (sobald verfügbar).
+4. Danach ist die Seite live unter: **https://nyamdorj.ch/**
+   (bis DNS greift, ggf. die Fallback-URL
+   `https://narandavaanyamdorj-hslu.github.io/nyamdorj.ch/`)
 
 ---
 
@@ -27,7 +38,7 @@ Ergebnis danach:
    (direkt: https://github.com/settings/developers)
 2. Ausfüllen:
    - **Application name:** `Davka CMS`
-   - **Homepage URL:** `https://narandavaanyamdorj-hslu.github.io/nyamdorj.ch/`
+   - **Homepage URL:** `https://nyamdorj.ch/`
    - **Authorization callback URL:** vorerst `https://example.com/callback`
      (ändern wir in Schritt 3, sobald wir die Worker-URL kennen)
 3. **Register application**
@@ -69,12 +80,12 @@ Das ist der fertige Open-Source-Dienst `sveltia-cms-auth` von Sveltia.
 
 ## Schritt 4 — Fertig, einloggen
 
-Öffne: `https://narandavaanyamdorj-hslu.github.io/nyamdorj.ch/admin/`
+Öffne: **https://nyamdorj.ch/admin/**
 → **Login with GitHub** → neuen Post schreiben → **Publish**.
 
 ---
 
-### Später: eigene Domain nyamdorj.ch
-Wenn du die Domain `nyamdorj.ch` einrichtest, bleibt alles gleich — `nyamdorj.ch`
-steht bereits in `ALLOWED_DOMAINS`. Dann nur noch die Homepage-URL der OAuth App
-auf `https://nyamdorj.ch/` anpassen. Sag Bescheid, dann machen wir das zusammen.
+### Hinweis zu den Domains
+`ALLOWED_DOMAINS` enthält sowohl `nyamdorj.ch` als auch die GitHub-Fallback-Domain,
+damit der Login in beiden Fällen funktioniert — auch solange das DNS für nyamdorj.ch
+noch nicht vollständig greift.
