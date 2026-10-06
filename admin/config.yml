@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# Sveltia CMS – Konfiguration für das Davka-Journal
+#
+# WICHTIG: Trage unten bei "base_url" die URL deines Login-Dienstes (Cloudflare
+# Worker) ein, sobald du ihn deployt hast. Ohne diese URL funktioniert der
+# Login NICHT. Siehe SETUP-ADMIN.md, Schritt 2 & 3.
+# ---------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: narandavaanyamdorj-hslu/nyamdorj.ch
+  branch: main
+  # 👇 HIER die Worker-URL eintragen (ohne / am Ende), z. B.:
+  # base_url: https://sveltia-cms-auth.deinname.workers.dev
+  base_url: HIER_DEINE_WORKER_URL_EINTRAGEN
+
+# Sprache des Admin-Panels
+locale: de
+
+# Medien (Bilder) – optional. Lässt sich später nutzen, wenn du Fotos posten willst.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: journal
+    label: "Journal"
+    icon: edit_note
+    files:
+      - name: posts
+        label: "Posts"
+        file: "data/posts.json"
+        description: "Deine Journal-Einträge. Neue Posts oben hinzufügen."
+        fields:
+          - label: "Posts"
+            name: "posts"
+            label_singular: "Post"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.text}}"
+            fields:
+              - { label: "Datum", name: "date", widget: "string", hint: "z. B. «Juli 2026» oder «6. Oktober 2026»" }
+              - { label: "Titel (optional)", name: "title", widget: "string", required: false }
+              - { label: "Text", name: "text", widget: "text" }
